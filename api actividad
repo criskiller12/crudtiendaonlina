@@ -1,0 +1,22 @@
+#importamos las libreria flask y jsonify de flask la cual nosm permite enviar en json el formato
+from flask import Flask, jsonify
+#es una instancia del modulo flask 
+app = Flask(__name__)
+
+
+#el lugar donde se encuentra el url de la conexion
+@app.route('/personas')
+
+#la funcion que devuelve la lista en api 
+def get_personas():
+    # la lista
+    personas = ['Ana', 'Luis', 'Pedro']
+    #el renorno en json 
+    return jsonify(personas)
+#solo se ejecuraara cuando el script este conectado al api o host asi correra y evitara errores 
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+    #para realizar solicitudos debemos irnos el api postman donde lo pondemos en get para conseguir lo que de este lado
+    #en este cado una lista.
